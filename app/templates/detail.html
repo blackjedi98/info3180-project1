@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block main %}
+<div class="card mb-1" style="max-width: 980px; height: 400px">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <img src="{{url_for('get_image',filename=property.name)}}" class="img-fluid rounded-start" alt="property picture" style="height:400px;"/>
+    </div>
+    <div class="col-md-6" style="display:flex; justify-content:center; flex-direction:column; padding:0px 10px;">
+      <div class="card-body" style="display:grid;">
+        <h4 class="card-title">{{property.title}}</h4>
+        <div style="padding:10px 1px;">
+          <div
+            class="badge text-bg-primary tron"
+            >${{property.price}}
+        </div>
+          <div
+            class="badge text-bg-warning tron"
+            >{{property.types}}
+        </div>
+        </div>
+          <p class="card-text">{{property.description}}</p>
+          <p class="text-secondary">
+          <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 20V18.5M5 20V18.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 15C2 14.0681 2 13.6022 2.15224 13.2346C2.35523 12.7446 2.74458 12.3552 3.23463 12.1522C3.60218 12 4.06812 12 5 12H19C19.9319 12 20.3978 12 20.7654 12.1522C21.2554 12.3552 21.6448 12.7446 21.8478 13.2346C22 13.6022 22 14.0681 22 15C22 15.9319 22 16.3978 21.8478 16.7654C21.6448 17.2554 21.2554 17.6448 20.7654 17.8478C20.3978 18 19.9319 18 19 18H5C4.06812 18 3.60218 18 3.23463 17.8478C2.74458 17.6448 2.35523 17.2554 2.15224 16.7654C2 16.3978 2 15.9319 2 15Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M21 12C21 8.22876 21 6.34315 19.8284 5.17157C18.6569 4 16.7712 4 13 4H11C7.22876 4 5.34315 4 4.17157 5.17157C3 6.34315 3 8.22876 3 12" stroke="#1C274C" stroke-width="1.5"></path> <path d="M18.5 12V10.5C18.5 8.61438 18.5 7.67157 17.9142 7.08579C17.3284 6.5 16.3856 6.5 14.5 6.5H9.5C7.61438 6.5 6.67157 6.5 6.08579 7.08579C5.5 7.67157 5.5 8.61438 5.5 10.5V12" stroke="#1C274C" stroke-width="1.5"></path> <path d="M12 7V12" stroke="#1C274C" stroke-width="1.5"></path> </g></svg>
+          <span style="margin-right:10px;">{{property.bedrooms}} Bedrooms</span>
+          <svg fill="#000000" width="30px" height="30px" viewBox="0 0 24 24" id="bathroom-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M19,10H13V9a3,3,0,0,1,3-3h0a3,3,0,0,1,3,3Z" style="fill: #2ca9bc; stroke-width: 2;"></path><path id="primary" d="M16,6V5a2,2,0,0,0-2-2H9A2,2,0,0,0,7,5V21" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-2" data-name="primary" d="M19,10H13V9a3,3,0,0,1,3-3h0a3,3,0,0,1,3,3ZM5,21H9m9-5V14m-4,2V14" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+          {{property.bathrooms}} Bathrooms
+          </p>
+          <p class="text-secondary">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"
+              />
+              <path
+                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
+            {{property.location}}
+          </p>
+        <div>
+          <button type="button" class="btn btn-success">Email Realtor</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

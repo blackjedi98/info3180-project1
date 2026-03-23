@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block main %}
+<h2>Add a New Property</h2>
+{% include 'flash_messages.html' %}
+<div class="forms">
+  <form class="row g-4" method="POST" action="{{url_for('create')}}" enctype="multipart/form-data">
+    {{form.csrf_token}}
+      <div class="col-12">
+        {{form.title.label(class='form-label')}}
+        {{form.title(class='form-control')}}
+      </div>
+      <div class="col-12">
+        {{form.description.label(class='form-label')}}
+        {{form.description(class='form-control')}}
+      </div>
+      <div class="col-md-6">
+        {{form.bedrooms.label(class='form-label')}}
+        {{form.bedrooms(class='form-control')}}
+      </div>
+      <div class="col-md-6">
+        {{form.bathrooms.label(class='form-label')}}
+        {{form.bathrooms(class='form-control')}}
+      </div>
+      <div class="col-md-6">
+        {{form.price.label(class='form-label')}}
+        {{form.price(class='form-control')}}
+      </div>
+      <div class="col-md-6">
+        {{form.types.label(class='form-label')}}
+        {{form.types(class='form-select')}}
+      </div>
+      <div class="col-md-6">
+        {{form.location.label(class='form-label')}}
+        {{form.location(class='form-control')}}
+      </div>
+      <div class="col-md-12">
+        <div class="input-group mb-3">
+          {{form.file(class='form-control')}}
+          {{form.file.label(class='input-group-text')}}
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Property</button>
+      </div>
+    </form>
+</div>
+{% endblock %}
